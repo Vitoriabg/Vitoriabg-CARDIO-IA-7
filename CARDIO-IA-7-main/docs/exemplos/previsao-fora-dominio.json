@@ -1,0 +1,10 @@
+{
+  "measurement_id": "med-exemplo-002",
+  "context_revision": 1,
+  "computed_at": "2026-11-10T18:00:00Z",
+  "status": "out_of_domain",
+  "probabilidade": null,
+  "classificacao_risco": null,
+  "reason": "BPM 180 fora do dominio de 50 a 150 do modelo.",
+  "window_samples": 1
+}

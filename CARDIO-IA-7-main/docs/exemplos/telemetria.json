@@ -1,0 +1,11 @@
+{
+  "schema_version": 1,
+  "device_id": "esp32-demo-01",
+  "boot_id": "boot-demo-001",
+  "sequence": 1,
+  "measured_at": null,
+  "uptime_ms": 3000,
+  "temperatura": 37.5,
+  "bpm": 118,
+  "historical": false
+}

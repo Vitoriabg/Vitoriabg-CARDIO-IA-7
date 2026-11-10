@@ -1,0 +1,186 @@
+{
+  "executed_at": "2026-11-10T23:01:08.024708+00:00",
+  "source": "CPython com adaptador de socket TLS; sem Wokwi",
+  "base_url": "https://tag-rehabilitation-wheel-buyer.trycloudflare.com",
+  "synthetic_only": true,
+  "cases": [
+    {
+      "sent": {
+        "schema_version": 1,
+        "device_id": "esp32-demo-01",
+        "boot_id": "teste-host-c48826a3472f401bb9867ca87f8e04d4",
+        "sequence": 0,
+        "measured_at": null,
+        "uptime_ms": 3000,
+        "temperatura": 26.0,
+        "bpm": 180,
+        "historical": false
+      },
+      "status": 201,
+      "retry_status": 200,
+      "received": {
+        "measurement_id": "med-1b536e145ea847a980a3c4af56ac8030",
+        "received_at": "2026-11-10T23:01:08.725772Z",
+        "boot_id": "teste-host-c48826a3472f401bb9867ca87f8e04d4",
+        "bpm": 180.0,
+        "device_id": "esp32-demo-01",
+        "historical": false,
+        "measured_at": null,
+        "schema_version": 1,
+        "sequence": 0,
+        "temperatura": 26.0,
+        "uptime_ms": 3000
+      },
+      "prediction": {
+        "classificacao_risco": null,
+        "computed_at": "2026-11-10T23:01:08.726155Z",
+        "context_revision": 1,
+        "measurement_id": "med-1b536e145ea847a980a3c4af56ac8030",
+        "probabilidade": null,
+        "reason": "Leitura fora do domínio do modelo preditivo.",
+        "status": "out_of_domain",
+        "window_samples": 1
+      }
+    },
+    {
+      "sent": {
+        "schema_version": 1,
+        "device_id": "esp32-demo-01",
+        "boot_id": "teste-host-2bfc2c3126d144d785792f4d2b455d34",
+        "sequence": 0,
+        "measured_at": null,
+        "uptime_ms": 3000,
+        "temperatura": 26.0,
+        "bpm": 81,
+        "historical": false
+      },
+      "status": 201,
+      "retry_status": 200,
+      "received": {
+        "measurement_id": "med-9eaeefb2df574401984e4f359eaa2fb4",
+        "received_at": "2026-11-10T23:01:09.148194Z",
+        "boot_id": "teste-host-2bfc2c3126d144d785792f4d2b455d34",
+        "bpm": 81.0,
+        "device_id": "esp32-demo-01",
+        "historical": false,
+        "measured_at": null,
+        "schema_version": 1,
+        "sequence": 0,
+        "temperatura": 26.0,
+        "uptime_ms": 3000
+      },
+      "prediction": {
+        "classificacao_risco": "alto",
+        "computed_at": "2026-11-10T23:01:09.148523Z",
+        "context_revision": 1,
+        "measurement_id": "med-9eaeefb2df574401984e4f359eaa2fb4",
+        "probabilidade": 0.9973065862008156,
+        "reason": null,
+        "status": "ready",
+        "window_samples": 1
+      }
+    }
+  ],
+  "analysis": {
+    "analysis_id": "ana-58bc3f8207064b7c870ee50fdba46cd8",
+    "measurement_id": "med-9eaeefb2df574401984e4f359eaa2fb4",
+    "context_revision": 1,
+    "status": "completed",
+    "requested_at": "2026-11-10T23:01:09.324993Z",
+    "completed_at": "2026-11-10T23:01:42.409274Z",
+    "error": null,
+    "recommendation": {
+      "acoes_operacionais": [
+        "abrir unidades temporárias",
+        "redistribuir insumos",
+        "ativar plano de contingência",
+        "ativar estado de emergência"
+      ],
+      "aviso": "Simulação acadêmica com dados sintéticos; não é diagnóstico nem orientação médica.",
+      "classificacao_risco": "alto",
+      "probabilidade": 0.9973065862008156,
+      "protocolos_sugeridos": [
+        {
+          "acao": "abrir unidades temporárias",
+          "condicao": "Se carga do sistema > 85%",
+          "id": "P02",
+          "valor_observado": 92.0
+        },
+        {
+          "acao": "redistribuir insumos",
+          "condicao": "Se disponibilidade_recursos < 30%",
+          "id": "P05",
+          "valor_observado": 25.0
+        },
+        {
+          "acao": "ativar plano de contingência",
+          "condicao": "Se densidade_eventos > 6",
+          "id": "P08",
+          "valor_observado": 7.0
+        },
+        {
+          "acao": "ativar estado de emergência",
+          "condicao": "Se risco sistêmico alto",
+          "id": "P10",
+          "valor_observado": "alto"
+        }
+      ]
+    },
+    "events": [
+      {
+        "nome": "Orquestrador",
+        "tipo": "agente"
+      },
+      {
+        "destino": "Analista de Risco",
+        "origem": "Orquestrador",
+        "tipo": "handoff"
+      },
+      {
+        "nome": "Analista de Risco",
+        "tipo": "agente"
+      },
+      {
+        "agente": "Analista de Risco",
+        "nome": "prever_risco",
+        "tipo": "tool"
+      },
+      {
+        "destino": "Especialista em Protocolos",
+        "origem": "Analista de Risco",
+        "tipo": "handoff"
+      },
+      {
+        "nome": "Especialista em Protocolos",
+        "tipo": "agente"
+      },
+      {
+        "agente": "Especialista em Protocolos",
+        "nome": "consultar_protocolos",
+        "tipo": "tool"
+      },
+      {
+        "destino": "Planejador de Resposta",
+        "origem": "Especialista em Protocolos",
+        "tipo": "handoff"
+      },
+      {
+        "nome": "Planejador de Resposta",
+        "tipo": "agente"
+      },
+      {
+        "agente": "Planejador de Resposta",
+        "nome": "planejar_resposta",
+        "tipo": "tool"
+      }
+    ],
+    "llm": {
+      "chamadas_llm": 6,
+      "modelo": "qwen3:0.6b",
+      "provedor": "ollama_local",
+      "tokens_entrada": 2231,
+      "tokens_saida": 113,
+      "usa_chave_openai": false
+    }
+  }
+}

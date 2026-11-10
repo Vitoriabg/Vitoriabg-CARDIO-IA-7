@@ -1,0 +1,40 @@
+{
+  "version": 1,
+  "author": "CardioIA",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "board-esp32-devkit-c-v4", "id": "esp", "top": 36, "left": 13, "attrs": { "env": "micropython-20260406-v1.28.0" } },
+    { "type": "wokwi-dht22", "id": "dht", "top": -82, "left": -117, "attrs": { "temperature": "26", "humidity": "55" } },
+    { "type": "wokwi-potentiometer", "id": "pot", "top": -72, "left": 28, "attrs": { "value": "300" } },
+    { "type": "wokwi-pushbutton", "id": "btn", "top": 71, "left": -141, "attrs": { "color": "blue", "label": "Rede" } },
+    { "type": "board-ssd1306", "id": "oled", "top": -67, "left": 190, "attrs": { "i2cAddress": "0x3c" } },
+    { "type": "wokwi-led", "id": "verde", "top": 112, "left": 216, "attrs": { "color": "green", "label": "Faixa do modelo" } },
+    { "type": "wokwi-led", "id": "vermelho", "top": 112, "left": 276, "attrs": { "color": "red", "label": "Fora da faixa / falha" } },
+    { "type": "wokwi-resistor", "id": "rv", "top": 185, "left": 181, "attrs": { "value": "220" } },
+    { "type": "wokwi-resistor", "id": "rr", "top": 223, "left": 181, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
+    ["dht:VCC", "esp:3V3", "red", []],
+    ["dht:GND", "esp:GND.1", "black", []],
+    ["dht:SDA", "esp:15", "purple", []],
+    ["pot:VCC", "esp:3V3", "red", []],
+    ["pot:GND", "esp:GND.1", "black", []],
+    ["pot:SIG", "esp:34", "orange", []],
+    ["btn:1.l", "esp:GND.1", "black", []],
+    ["btn:2.l", "esp:12", "blue", []],
+    ["oled:VCC", "esp:3V3", "red", []],
+    ["oled:GND", "esp:GND.2", "black", []],
+    ["oled:SDA", "esp:21", "green", []],
+    ["oled:SCL", "esp:22", "cyan", []],
+    ["esp:25", "rv:1", "green", []],
+    ["rv:2", "verde:A", "green", []],
+    ["verde:C", "esp:GND.2", "black", []],
+    ["esp:26", "rr:1", "orange", []],
+    ["rr:2", "vermelho:A", "orange", []],
+    ["vermelho:C", "esp:GND.2", "black", []]
+  ],
+  "serialMonitor": { "display": "always", "newline": "lf" },
+  "dependencies": {}
+}

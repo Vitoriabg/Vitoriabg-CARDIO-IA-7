@@ -1,0 +1,15 @@
+{
+  "schema_version": 1,
+  "source": "synthetic",
+  "context_revision": 1,
+  "values": {
+    "idade_media": 62,
+    "carga_sistema": 92,
+    "tempo_espera": 75,
+    "spo2_media": 89,
+    "pa_sistolica": 100,
+    "densidade_eventos": 7,
+    "eventos_24h": 5,
+    "disponibilidade_recursos": 25
+  }
+}

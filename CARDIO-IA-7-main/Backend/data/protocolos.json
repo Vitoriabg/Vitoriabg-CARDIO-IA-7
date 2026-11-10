@@ -1,0 +1,13 @@
+[
+  {"id": "P01", "campo": "spo2_media", "operador": "<", "limite": 88, "condicao": "Se SPO2 < 88%", "acao": "iniciar suporte respiratório imediato"},
+  {"id": "P02", "campo": "carga_sistema", "operador": ">", "limite": 85, "condicao": "Se carga do sistema > 85%", "acao": "abrir unidades temporárias"},
+  {"id": "P03", "campo": "fc_media", "operador": ">", "limite": 120, "condicao": "Se FC > 120", "acao": "iniciar monitoramento intensivo"},
+  {"id": "P04", "campo": "eventos_24h", "operador": ">", "limite": 5, "condicao": "Se eventos_24h > 5", "acao": "ativar equipe de resposta rápida"},
+  {"id": "P05", "campo": "disponibilidade_recursos", "operador": "<", "limite": 30, "condicao": "Se disponibilidade_recursos < 30%", "acao": "redistribuir insumos"},
+  {"id": "P06", "campo": "tempo_espera", "operador": ">", "limite": 90, "condicao": "Se tempo_espera > 90 min", "acao": "priorizar triagem emergencial"},
+  {"id": "P07", "campo": "temperatura", "operador": ">", "limite": 38, "condicao": "Se temperatura > 38°C média", "acao": "iniciar protocolo infeccioso"},
+  {"id": "P08", "campo": "densidade_eventos", "operador": ">", "limite": 6, "condicao": "Se densidade_eventos > 6", "acao": "ativar plano de contingência"},
+  {"id": "P09", "campo": "pa_sistolica", "operador": "<", "limite": 90, "condicao": "Se PA sistólica < 90", "acao": "iniciar protocolo de choque"},
+  {"id": "P10", "campo": "classificacao_risco", "operador": "==", "limite": "alto", "condicao": "Se risco sistêmico alto", "acao": "ativar estado de emergência"}
+]
+

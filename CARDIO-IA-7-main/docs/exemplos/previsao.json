@@ -1,0 +1,10 @@
+{
+  "measurement_id": "med-exemplo-001",
+  "context_revision": 1,
+  "computed_at": "2026-11-10T18:00:00Z",
+  "status": "ready",
+  "probabilidade": 0.9986424786256043,
+  "classificacao_risco": "alto",
+  "reason": null,
+  "window_samples": 1
+}

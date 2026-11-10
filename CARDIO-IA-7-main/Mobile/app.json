@@ -1,0 +1,11 @@
+{
+  "expo": {
+    "name": "CardioIA",
+    "slug": "cardioia-fase7",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "android": { "package": "com.cardioia.fase7", "versionCode": 1 },
+    "extra": { "eas": { "projectId": "REPLACE_WITH_EAS_PROJECT_ID" } }
+  }
+}

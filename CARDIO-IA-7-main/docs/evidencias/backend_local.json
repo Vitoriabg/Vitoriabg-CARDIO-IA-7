@@ -1,0 +1,270 @@
+{
+  "executed_at": "2026-11-10T21:50:56.582518+00:00",
+  "base_url": "http://127.0.0.1:8000",
+  "synthetic_data_only": true,
+  "llm": "ollama_local_real",
+  "unauthenticated_status": 401,
+  "cases": [
+    {
+      "label": "alto",
+      "telemetry": {
+        "schema_version": 1,
+        "device_id": "esp32-demo-01",
+        "boot_id": "smoke-3fefb9710d7144cabb5234d99d9c3cd1",
+        "sequence": 1,
+        "measured_at": null,
+        "uptime_ms": 3000,
+        "temperatura": 37.5,
+        "bpm": 118,
+        "historical": false
+      },
+      "context_values": {
+        "idade_media": 62,
+        "carga_sistema": 92,
+        "tempo_espera": 75,
+        "spo2_media": 89,
+        "pa_sistolica": 100,
+        "densidade_eventos": 7,
+        "eventos_24h": 5,
+        "disponibilidade_recursos": 25
+      },
+      "prediction": {
+        "classificacao_risco": "alto",
+        "computed_at": "2026-11-10T21:50:56.635424Z",
+        "context_revision": 5,
+        "measurement_id": "med-ea984b14b3d24375b829577e3e7350b6",
+        "probabilidade": 0.9986424786256043,
+        "reason": null,
+        "status": "ready",
+        "window_samples": 1
+      },
+      "analysis": {
+        "analysis_id": "ana-808db085f4104ab19da72b9397e82d22",
+        "measurement_id": "med-ea984b14b3d24375b829577e3e7350b6",
+        "context_revision": 5,
+        "status": "completed",
+        "requested_at": "2026-11-10T21:50:56.654378Z",
+        "completed_at": "2026-11-10T21:51:31.931224Z",
+        "error": null,
+        "recommendation": {
+          "acoes_operacionais": [
+            "abrir unidades temporárias",
+            "redistribuir insumos",
+            "ativar plano de contingência",
+            "ativar estado de emergência"
+          ],
+          "aviso": "Simulação acadêmica com dados sintéticos; não é diagnóstico nem orientação médica.",
+          "classificacao_risco": "alto",
+          "probabilidade": 0.9986424786256043,
+          "protocolos_sugeridos": [
+            {
+              "acao": "abrir unidades temporárias",
+              "condicao": "Se carga do sistema > 85%",
+              "id": "P02",
+              "valor_observado": 92.0
+            },
+            {
+              "acao": "redistribuir insumos",
+              "condicao": "Se disponibilidade_recursos < 30%",
+              "id": "P05",
+              "valor_observado": 25.0
+            },
+            {
+              "acao": "ativar plano de contingência",
+              "condicao": "Se densidade_eventos > 6",
+              "id": "P08",
+              "valor_observado": 7.0
+            },
+            {
+              "acao": "ativar estado de emergência",
+              "condicao": "Se risco sistêmico alto",
+              "id": "P10",
+              "valor_observado": "alto"
+            }
+          ]
+        },
+        "events": [
+          {
+            "nome": "Orquestrador",
+            "tipo": "agente"
+          },
+          {
+            "destino": "Analista de Risco",
+            "origem": "Orquestrador",
+            "tipo": "handoff"
+          },
+          {
+            "nome": "Analista de Risco",
+            "tipo": "agente"
+          },
+          {
+            "agente": "Analista de Risco",
+            "nome": "prever_risco",
+            "tipo": "tool"
+          },
+          {
+            "destino": "Especialista em Protocolos",
+            "origem": "Analista de Risco",
+            "tipo": "handoff"
+          },
+          {
+            "nome": "Especialista em Protocolos",
+            "tipo": "agente"
+          },
+          {
+            "agente": "Especialista em Protocolos",
+            "nome": "consultar_protocolos",
+            "tipo": "tool"
+          },
+          {
+            "destino": "Planejador de Resposta",
+            "origem": "Especialista em Protocolos",
+            "tipo": "handoff"
+          },
+          {
+            "nome": "Planejador de Resposta",
+            "tipo": "agente"
+          },
+          {
+            "agente": "Planejador de Resposta",
+            "nome": "planejar_resposta",
+            "tipo": "tool"
+          }
+        ],
+        "llm": {
+          "chamadas_llm": 6,
+          "modelo": "qwen3:0.6b",
+          "provedor": "ollama_local",
+          "tokens_entrada": 2237,
+          "tokens_saida": 113,
+          "usa_chave_openai": false
+        }
+      },
+      "wait_seconds": 36.12
+    },
+    {
+      "label": "baixo",
+      "telemetry": {
+        "schema_version": 1,
+        "device_id": "esp32-demo-01",
+        "boot_id": "smoke-fed64a6eafff44d6acbbbb3e23895ffd",
+        "sequence": 1,
+        "measured_at": null,
+        "uptime_ms": 3000,
+        "temperatura": 24,
+        "bpm": 75,
+        "historical": false
+      },
+      "context_values": {
+        "idade_media": 45,
+        "carga_sistema": 40,
+        "tempo_espera": 20,
+        "spo2_media": 98,
+        "pa_sistolica": 120,
+        "densidade_eventos": 2,
+        "eventos_24h": 1,
+        "disponibilidade_recursos": 90
+      },
+      "prediction": {
+        "classificacao_risco": "baixo",
+        "computed_at": "2026-11-10T21:51:32.855170Z",
+        "context_revision": 6,
+        "measurement_id": "med-e1d9d5221d1e44b78d52b770095b2bb7",
+        "probabilidade": 0.00045448698882650043,
+        "reason": null,
+        "status": "ready",
+        "window_samples": 1
+      },
+      "analysis": {
+        "analysis_id": "ana-f1641b0f85b0425d9d8ff13f81ae615a",
+        "measurement_id": "med-e1d9d5221d1e44b78d52b770095b2bb7",
+        "context_revision": 6,
+        "status": "completed",
+        "requested_at": "2026-11-10T21:51:32.876441Z",
+        "completed_at": "2026-11-10T21:52:03.023044Z",
+        "error": null,
+        "recommendation": {
+          "acoes_operacionais": [],
+          "aviso": "Simulação acadêmica com dados sintéticos; não é diagnóstico nem orientação médica.",
+          "classificacao_risco": "baixo",
+          "probabilidade": 0.00045448698882650043,
+          "protocolos_sugeridos": []
+        },
+        "events": [
+          {
+            "nome": "Orquestrador",
+            "tipo": "agente"
+          },
+          {
+            "destino": "Analista de Risco",
+            "origem": "Orquestrador",
+            "tipo": "handoff"
+          },
+          {
+            "nome": "Analista de Risco",
+            "tipo": "agente"
+          },
+          {
+            "agente": "Analista de Risco",
+            "nome": "prever_risco",
+            "tipo": "tool"
+          },
+          {
+            "destino": "Especialista em Protocolos",
+            "origem": "Analista de Risco",
+            "tipo": "handoff"
+          },
+          {
+            "nome": "Especialista em Protocolos",
+            "tipo": "agente"
+          },
+          {
+            "agente": "Especialista em Protocolos",
+            "nome": "consultar_protocolos",
+            "tipo": "tool"
+          },
+          {
+            "destino": "Planejador de Resposta",
+            "origem": "Especialista em Protocolos",
+            "tipo": "handoff"
+          },
+          {
+            "nome": "Planejador de Resposta",
+            "tipo": "agente"
+          },
+          {
+            "agente": "Planejador de Resposta",
+            "nome": "planejar_resposta",
+            "tipo": "tool"
+          }
+        ],
+        "llm": {
+          "chamadas_llm": 6,
+          "modelo": "qwen3:0.6b",
+          "provedor": "ollama_local",
+          "tokens_entrada": 1957,
+          "tokens_saida": 113,
+          "usa_chave_openai": false
+        }
+      },
+      "wait_seconds": 33.11
+    }
+  ],
+  "conversation": {
+    "question": "O que significa o indicador de risco do painel nesta simulação?",
+    "result": {
+      "message_id": "msg-b73f2aaaafa0446ea7a4cc8ace296943",
+      "measurement_id": null,
+      "context_revision": null,
+      "status": "completed",
+      "requested_at": "2026-11-10T21:52:06.043525Z",
+      "completed_at": "2026-11-10T21:52:26.530587Z",
+      "error": null,
+      "model": "qwen3:0.6b",
+      "notice": "Simulação acadêmica; não substitui avaliação profissional.",
+      "origin": "ollama_local",
+      "text": "O indicador de risco mostra a classe calculada pelo modelo para este cenário sintético, que indica que a probabilidade de ocorrência de um evento é baixa. Este resultado não mede a chance individual de uma doença ou crise cardíaca e não orienta cuidados de saúde."
+    },
+    "wait_seconds": 21.08
+  }
+}

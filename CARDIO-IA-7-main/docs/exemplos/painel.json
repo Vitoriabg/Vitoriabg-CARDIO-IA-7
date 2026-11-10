@@ -1,0 +1,51 @@
+{
+  "case_id": "caso-demo-01",
+  "measurement": {
+    "measurement_id": "med-exemplo-001",
+    "received_at": "2026-11-10T18:00:00Z",
+    "schema_version": 1,
+    "device_id": "esp32-demo-01",
+    "boot_id": "boot-demo-001",
+    "sequence": 1,
+    "measured_at": null,
+    "uptime_ms": 3000,
+    "temperatura": 37.5,
+    "bpm": 118,
+    "historical": false
+  },
+  "context": {
+    "schema_version": 1,
+    "source": "synthetic",
+    "context_revision": 1,
+    "values": {
+      "idade_media": 62,
+      "carga_sistema": 92,
+      "tempo_espera": 75,
+      "spo2_media": 89,
+      "pa_sistolica": 100,
+      "densidade_eventos": 7,
+      "eventos_24h": 5,
+      "disponibilidade_recursos": 25
+    }
+  },
+  "prediction": {
+    "measurement_id": "med-exemplo-001",
+    "context_revision": 1,
+    "computed_at": "2026-11-10T18:00:00Z",
+    "status": "ready",
+    "probabilidade": 0.9986424786256043,
+    "classificacao_risco": "alto",
+    "reason": null,
+    "window_samples": 1
+  },
+  "analysis": {
+    "analysis_id": "ana-exemplo-001",
+    "measurement_id": "med-exemplo-001",
+    "context_revision": 1,
+    "status": "queued",
+    "requested_at": "2026-11-10T18:00:00Z",
+    "completed_at": null,
+    "recommendation": null,
+    "error": null
+  }
+}

@@ -1,0 +1,10 @@
+# Dependências diretas; ambiente resolvido e validado em requirements.txt.
+-r requirements-fase6.txt
+fastapi
+uvicorn[standard]
+PyJWT
+pwdlib[argon2]
+python-multipart
+Pillow
+
+# TensorFlow e o adaptador visual serão avaliados com o artefato da Fase 4.
