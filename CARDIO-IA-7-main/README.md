@@ -8,7 +8,7 @@ Esta etapa dá continuidade à [Fase 6 — Sistema Preditivo Multiagente](https:
 
 **Disciplina/projeto:** 2º ano, Fase 7, Capítulo 1 — *Da Construção de Módulos à Solução Integrada*.
 
-> **Status: backend e IA implementados.** A API Python já recebe telemetria, autentica usuários, mantém histórico e executa o modelo e os agentes da Fase 6, além da conversa com Ollama local. O circuito MicroPython já executa no Wokwi. O link público e a validação da rede do simulador seguem em andamento; Web e Mobile são as próximas etapas. Consulte a [instalação do backend](Backend/README.md) e as [evidências de execução](docs/evidencias/).
+> **Status:** backend, IA, firmware, Web e Mobile implementados. A aplicação Web/Vite está publicada na Production da Vercel, protegida pelo acesso da equipe; login e dados ainda dependem de uma URL pública da API. O APK de teste foi gerado pelo EAS na conta pessoal `vivibggg`; a instalação e validação em Android físico ainda faltam. A execução do backend depende de Ollama local e túnel ativo. Consulte os guias de [backend](Backend/README.md), [Web](Web/README.md) e [Mobile](Mobile/README.md), além das [evidências](docs/evidencias/).
 
 > Projeto acadêmico com dados e protocolos simulados. Os resultados não constituem diagnóstico, prescrição ou recomendação para uso clínico.
 
@@ -30,12 +30,12 @@ O planejamento foi dividido em 22 cartões com checklists e dependências no [Tr
 
 ## 📂 Estrutura de Arquivos
 
-O backend e o firmware estão implementados. As pastas Web e Mobile contêm as orientações para as interfaces:
+O backend, o firmware e as interfaces estão implementados:
 
 ```text
 CARDIO-IA-7/
-├── Web/                    # Orientações para React + Vite; aplicação futura
-├── Mobile/                 # Orientações para React Native + Expo; app futuro
+├── Web/                    # Aplicação React + Vite e configuração Vercel
+├── Mobile/                 # Aplicativo React Native + Expo e perfil EAS APK
 ├── Backend/                # API, modelo, agentes, dados, scripts e testes
 ├── IoT/                    # Firmware MicroPython, circuito Wokwi e guia de execução
 ├── docs/
@@ -51,7 +51,7 @@ CARDIO-IA-7/
 └── README.md
 ```
 
-Os nomes das pastas de backend e IoT seguem os entregáveis do enunciado. Os arquivos de configuração serão incluídos com as respectivas aplicações.
+Os nomes das pastas de backend e IoT seguem os entregáveis do enunciado. Cada aplicação possui suas configurações e instruções de execução no respectivo diretório.
 
 O [planejamento](docs/planejamento.md) registra escopo, sequência, responsabilidades e pendências. O [inventário](docs/inventario.md) apresenta o que existe nas seis fases e o que precisa ser adaptado. O [contrato da API](docs/contrato-api.md) e os [exemplos de dados](docs/exemplos/README.md) permitem preparar as telas antes da integração.
 
@@ -100,19 +100,19 @@ As decisões estão em [arquitetura planejada](docs/arquitetura.md): FastAPI, SQ
 
 ## 🌐 3. Aplicação Web e Deploy
 
-A aplicação Web será desenvolvida/adaptada em **React + Vite** e publicada na **Vercel**.
+A aplicação Web está implementada em **React + Vite**. A raiz do projeto Vercel está configurada para `Web/`; pushes para o GitHub acionam o CI/CD de Preview e a branch principal já gerou um deploy de Production. O deploy está protegido pelo acesso da equipe e o login integrado depende de uma URL pública para a API.
 
 Entregas previstas:
 
 - Configuração de `vercel.json` com suporte a rotas SPA.
 - Conexão da interface ao backend integrador.
 - Deploy automático acionado por push no GitHub (**CI/CD**).
-- Validação de login e visualização dos dados cardíacos na URL pública.
+- Validação do login e dos dados cardíacos: pendente até configurar uma URL pública para a API.
 - Prints comprobatórios do deploy concluído.
 
 ## 📱 4. Aplicativo Mobile
 
-O aplicativo será desenvolvido/adaptado em **React Native + Expo**, com geração de **APK pelo Expo EAS Build**.
+O aplicativo **React Native + Expo** está implementado e vinculado ao projeto EAS pessoal `@vivibggg/cardioia-fase7`. O APK do perfil `preview` foi gerado; a validação em Android físico permanece pendente.
 
 Entregas previstas:
 
@@ -141,13 +141,13 @@ O trabalho de UX prioriza a leitura dos indicadores de risco e a compreensão do
 
 O [guia do backend](Backend/README.md) contém instalação com Python 3.12, geração das configurações locais, execução da API, Ollama, testes e abertura do túnel HTTPS. As dependências de execução estão fixadas em `Backend/requirements.txt`.
 
-O [guia do IoT](IoT/README.md) descreve a reprodução do circuito. Web e Mobile receberão seus comandos quando forem implementados. O classificador visual da Fase 4 permanece indisponível enquanto os pesos e as classes não forem recuperados; a API informa esse estado com `503`.
+Os guias de [Web](Web/README.md), [Mobile](Mobile/README.md) e [IoT](IoT/README.md) descrevem execução e configuração. O classificador visual da Fase 4 permanece indisponível enquanto os pesos e as classes não forem recuperados; a API informa esse estado com `503`.
 
 As configurações de ambiente serão documentadas por exemplos sem credenciais. Senhas, tokens e arquivos `.env` com valores reais não devem ser incluídos no repositório.
 
 ### Instalação do APK
 
-Após disponibilizar o build, esta seção receberá o link/QR Code, os passos de instalação e as evidências de validação em Android real.
+O [APK de teste do CardioIA](https://expo.dev/artifacts/eas/kwckbyNm3C6sTptddnAl8gAI4TydZLmmWoWirRrl38I.apk) foi gerado pelo projeto [CardioIA no EAS](https://expo.dev/accounts/vivibggg/projects/cardioia-fase7). Instale-o em um Android físico e valide login e sinais após configurar a URL pública da API; essa verificação ainda depende de dispositivo real.
 
 ## 🎥 8. Demonstração e Entrega Acadêmica
 
@@ -155,10 +155,10 @@ Após disponibilizar o build, esta seção receberá o link/QR Code, os passos d
 | --- | --- |
 | Estrutura, inventário, arquitetura e contratos | Documentados; contrato HTTP implementado |
 | Backend, modelo preditivo e conversa local | Implementados; 105 testes automatizados e validação HTTP com motores reais |
-| Código completo Web, Mobile, Backend e IoT no GitHub privado | Backend e firmware disponíveis; interfaces pendentes |
+| Código Web, Mobile, Backend e IoT no GitHub privado | Código do app em `main`; esta branch atualiza o status e as evidências |
 | Acesso do tutor ao repositório | Convite informado pela equipe; aceitação a confirmar |
-| Web pública na Vercel com CI/CD | Pendente |
-| APK no Expo EAS Build | Pendente |
+| Web na Vercel com CI/CD | Production Vite pronta; API pública pendente para login e dados |
+| APK no Expo EAS Build | APK de `preview` gerado na conta `vivibggg`; teste físico pendente |
 | Projeto público MicroPython no Wokwi | Circuito executado no editor; publicação em andamento |
 | Diagrama da arquitetura final | Pendente |
 | Relatório técnico PDF — **máximo de 5 páginas** | Pendente |
@@ -171,8 +171,8 @@ O vídeo deverá demonstrar o fluxo desde o Wokwi até a atualização do dado n
 
 | Recurso | Link / estado |
 | --- | --- |
-| Aplicação Web na Vercel | A publicar |
-| Build APK no Expo / QR Code | A gerar |
+| Web na Vercel | [Abrir aplicação](https://vitoriabg-cardio-ia-7.vercel.app) — requer acesso à equipe; login aguarda API pública |
+| APK de teste / projeto EAS | [Baixar APK](https://expo.dev/artifacts/eas/kwckbyNm3C6sTptddnAl8gAI4TydZLmmWoWirRrl38I.apk) · [projeto EAS](https://expo.dev/accounts/vivibggg/projects/cardioia-fase7) |
 | Simulação pública no Wokwi | A publicar |
 | Relatório técnico PDF | A produzir |
 | Vídeo demonstrativo | A gravar e disponibilizar |
