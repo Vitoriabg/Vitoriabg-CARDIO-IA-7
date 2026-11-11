@@ -17,6 +17,6 @@ Defina `EXPO_PUBLIC_CONFIG_URL` como a URL do `runtime-config.json` publicado, p
 npx eas-cli build --platform android --profile preview
 ```
 
-O EAS solicita a vinculação do projeto Expo na primeira execução. Faça login na conta Expo da equipe, gere o APK e valide a instalação, login e consulta de sinais em um dispositivo Android físico antes de divulgar o link do build. O APK e o deploy público ainda precisam dessa validação final.
+Antes do primeiro build, autentique-se com `npx eas-cli@latest login` e vincule este app a um projeto Expo com `npx eas-cli@latest init`; isso grava o `projectId` real em `app.json`. Em seguida, gere o APK com o comando acima. A conta Expo e o projeto EAS precisam estar acessíveis; não use um ID fictício. Instale o APK e valide login e consulta de sinais em um dispositivo Android físico antes de divulgar o link do build.
 
 Os dados e protocolos deste aplicativo são sintéticos e acadêmicos; não usar para decisões clínicas.
