@@ -17,6 +17,6 @@ Defina `EXPO_PUBLIC_CONFIG_URL` como a URL do `runtime-config.json` publicado, p
 npx eas-cli build --platform android --profile preview
 ```
 
-Antes do primeiro build, autentique-se com `npx eas-cli@latest login` e vincule este app a um projeto Expo com `npx eas-cli@latest init`; isso grava o `projectId` real em `app.json`. Em seguida, gere o APK com o comando acima. A conta Expo e o projeto EAS precisam estar acessíveis; não use um ID fictício. Instale o APK e valide login e consulta de sinais em um dispositivo Android físico antes de divulgar o link do build.
+Projeto EAS vinculado: [@vivibggg/cardioia-fase7](https://expo.dev/accounts/vivibggg/projects/cardioia-fase7). O `projectId` real está em `app.json` e o perfil `preview` gera APK. O [APK de teste](https://expo.dev/artifacts/eas/kwckbyNm3C6sTptddnAl8gAI4TydZLmmWoWirRrl38I.apk) já está pronto. Instale-o em um Android físico e valide login e sinais com a API pública configurada. Não inclua `EXPO_TOKEN` no código ou no Git; revogue o token após o build se não precisar de builds futuros.
 
 Os dados e protocolos deste aplicativo são sintéticos e acadêmicos; não usar para decisões clínicas.
